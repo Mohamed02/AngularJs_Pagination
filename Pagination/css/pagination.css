@@ -1,0 +1,34 @@
+
+.pagination {
+
+     background-color:#5ED7B8;
+     border-radius:100%;
+     width:30px;
+     height:30px;
+     text-align:center;
+     line-height:30px;
+     pointer-events: none;
+     cursor: default;
+
+
+}
+
+.page > a:focus {
+
+     
+      outline:0;
+      
+
+}
+
+.page > a:hover {
+
+      color:#5ED7B8;
+}
+.subcontainer{
+width:50%;
+float:none;
+margin-left:auto;
+margin-right:auto;
+margin-top: 8%;
+}

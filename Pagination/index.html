@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>Pagination</title>	
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
+	<link href="css/pagination.css" rel="stylesheet" type="text/css"/>
+</head> 
+<body ng-app='moduleApp'>
+<h3>Angular JS Pagination</h3>
+
+    <div ng-controller="Pagination">
+        <div class="container">
+    	   <div class="row">
+                <div class="table-responsive subcontainer" >
+                   <table class="table table-bordered table-condensed table-striped">
+                        <thead>
+                            <tr class="info">
+                                <th class="text-info">Name</th>
+                                <th class="text-info">Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="person in person.details">
+                                <td>
+                                    {{person.name}}
+                                </td>
+                                <td>{{person.age}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    	<div class="row ">
+            <div class="page text-center" style="margin-right: 0px;">
+                <button type="button"  ng-click="prevPage()" ng-disabled="curPage <= 1" style="background-color:#ffffff;border-style:none;" >
+                    <img src="images/LeftArrowIcon.jpg" ></img>&nbsp;&nbsp; Previous
+                </button>&nbsp;|&nbsp;
+                <button type="button" ng-click="curPageNo(1)" ng-disabled="curPage == 1" style="background-color:#ffffff;border-style:none;">First</button>
+                <a href="" ng-repeat="n in pages"  ng-class="{pagination: n.no == curPage}" ng-click="curPageNo(n.no)" style="text-decoration:none;">&nbsp;&nbsp;{{n.no}}&nbsp;&nbsp;</a>
+                <!-- <span>{{curPage}} of {{numberOfPages}}</span>  -->
+                <button type="button" ng-click="curPageNo(numberOfPages)" ng-disabled="curPage >= numberOfPages" style="background-color:#ffffff;border-style:none;">Last</button>&nbsp;|&nbsp;
+                <button type="button" ng-click="nextPage()" ng-disabled="curPage >= numberOfPages" style="background-color:#ffffff;border-style:none;">Next&nbsp;&nbsp;
+                    <img src="images/RightArrowIcon.jpg" ></img>
+                </button>
+            </div>
+        </div>
+    </div>
+
+	<script src="libraries/angular.min.js"></script>	
+	<script src="libraries/jquery-1.11.1.min.js"></script>
+	<script src="libraries/bootstrap.min.js"></script>
+
+	<script src="scripts/app.js"></script>
+
+	<script src="scripts/controller/pagination.js"></script>
+	<script src="scripts/service/pagination.js"></script>
+</body>
+</html>
